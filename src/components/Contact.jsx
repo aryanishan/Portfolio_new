@@ -7,6 +7,9 @@ export default function Contact() {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
+  const [submitError, setSubmitError] = useState('');
+
+  const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,15 +41,40 @@ export default function Contact() {
     const nextErrors = validate();
     if (Object.keys(nextErrors).length) {
       setErrors(nextErrors);
+      setSubmitError('');
       return;
     }
 
     setErrors({});
+    setSubmitError('');
     setLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 1400));
-    setLoading(false);
-    setSent(true);
-    setForm({ name: '', email: '', message: '' });
+
+    try {
+      const response = await fetch(`${apiBaseUrl}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        if (data.errors) {
+          setErrors(data.errors);
+        }
+
+        throw new Error(data.message || 'Unable to send your message right now.');
+      }
+
+      setSent(true);
+      setForm({ name: '', email: '', message: '' });
+    } catch (error) {
+      setSubmitError(error.message || 'Unable to send your message right now.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputStyle = {
@@ -78,8 +106,8 @@ export default function Contact() {
                 {
                   icon: <Mail size={20} />,
                   label: 'Email',
-                  value: 'myteamo34221@gmail.com',
-                  href: 'mailto:myteamo34221@gmail.com',
+                  value: 'myteam034221@gmail.com',
+                  href: 'mailto:myteam034221@gmail.com',
                 },
                 {
                   icon: <MapPin size={20} />,
@@ -203,6 +231,10 @@ export default function Contact() {
                       </>
                     )}
                   </button>
+
+                  {submitError && (
+                    <p className="text-sm text-red-300 text-center">{submitError}</p>
+                  )}
                 </div>
               )}
             </div>
