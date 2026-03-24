@@ -26,7 +26,15 @@ const PROJECTS = [
     description:
       'A collaboration platform for small creators with clean onboarding, scalable architecture, and a modern presentation layer.',
     tags: ['Node.js', 'Express.js', 'REST APIs'],
-    screenshots: [],
+    screenshots: [
+      '/creator-connect-1.png',
+      '/creator-connect-2.png',
+      '/creator-connect-3.png',
+      '/creator-connect-4.png',
+      '/creator-connect-5.png',
+      '/creator-connect-6.png',
+      '/creator-connect-7.png',
+    ],
     github: 'https://github.com/aryanishan',
     live: '#',
     tone: 'from-[#ff6464]/25 to-transparent',
