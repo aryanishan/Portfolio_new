@@ -157,7 +157,7 @@ export default function Skills() {
               <div
                 key={label}
                 data-anim
-                className="glass-card hover-lift rounded-[24px] p-6 opacity-0 translate-y-6 transition-all duration-700"
+                className="glass-card hover-lift rounded-[10px] p-6 opacity-0 translate-y-6 transition-all duration-700"
               >
                 <h3 className="text-xl font-bold mb-6" style={{ color: 'var(--text)' }}>{label}</h3>
                 {skills.map(skill => (

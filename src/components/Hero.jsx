@@ -99,12 +99,12 @@ export default function Hero() {
 
         <div data-reveal className="reveal relative flex justify-center lg:justify-end">
           <div
-            className="absolute inset-x-4 top-8 bottom-8 rounded-[44px] blur-3xl"
+            className="absolute inset-x-4 top-8 bottom-8 rounded-[10px] blur-3xl"
             style={{ background: 'linear-gradient(to bottom right, color-mix(in srgb, var(--accent) 15%, transparent), transparent)' }}
           />
           <div className="relative w-full max-w-[560px] min-h-[520px] sm:min-h-[580px] flex items-center justify-center">
             <div
-              className="absolute inset-x-4 top-8 bottom-8 rounded-[44px] border"
+              className="absolute inset-x-4 top-8 bottom-8 rounded-[10px] border"
               style={{
                 borderColor: 'color-mix(in srgb, var(--accent) 25%, var(--border))',
                 background: 'color-mix(in srgb, var(--card-strong) 55%, transparent)',
@@ -125,14 +125,14 @@ export default function Hero() {
               />
             </div>
 
-            <div className="absolute left-0 bottom-14 z-20 glass-card rounded-2xl px-5 py-4 max-w-[260px] sm:max-w-[290px]">
+            <div className="absolute left-0 bottom-14 z-20 glass-card rounded-[10px] px-5 py-4 max-w-[260px] sm:max-w-[290px]">
               <p className="text-xs uppercase tracking-[0.25em]" style={{ color: 'var(--accent)' }}>Role</p>
               <p className="mt-1 text-base sm:text-lg font-bold leading-snug" style={{ color: 'var(--text)' }}>
                 Full Stack Developer, Data Scientist
               </p>
             </div>
 
-            <div className="absolute top-10 right-0 z-20 glass-card rounded-2xl px-5 py-4 min-w-[180px]">
+            <div className="absolute top-10 right-0 z-20 glass-card rounded-[10px] px-5 py-4 min-w-[180px]">
               <p className="text-xs uppercase tracking-[0.25em]" style={{ color: 'var(--accent)' }}>Experience</p>
               <p className="mt-1 text-lg font-bold" style={{ color: 'var(--text)' }}>3+ Years</p>
             </div>

@@ -20,10 +20,10 @@ export default function CVSection() {
           </div>
 
           <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-8 items-start">
-            <div data-reveal className="reveal glass-card rounded-[28px] p-5 md:p-7">
+            <div data-reveal className="reveal glass-card rounded-[10px] p-5 md:p-7">
               <div className="flex items-center gap-3 mb-5">
                 <div
-                  className="w-12 h-12 rounded-2xl flex items-center justify-center"
+                  className="w-12 h-12 rounded-[10px] flex items-center justify-center"
                   style={{ background: 'color-mix(in srgb, var(--accent) 10%, transparent)', color: 'var(--accent)' }}
                 >
                   <FileImage size={22} />
@@ -38,14 +38,14 @@ export default function CVSection() {
                 href={CV_FILE}
                 target="_blank"
                 rel="noreferrer"
-                className="block rounded-[24px] overflow-hidden border transition-transform hover:scale-[1.01]"
+                className="block rounded-[10px] overflow-hidden border transition-transform hover:scale-[1.01]"
                 style={{ borderColor: 'var(--border)', background: 'color-mix(in srgb, var(--card-strong) 78%, transparent)' }}
               >
                 <img src={CV_FILE} alt="Aryan Gupta CV preview" className="w-full h-auto object-cover object-top" />
               </a>
             </div>
 
-            <div data-reveal className="reveal glass-card rounded-[28px] p-7 flex flex-col justify-between min-h-[320px]">
+            <div data-reveal className="reveal glass-card rounded-[10px] p-7 flex flex-col justify-between min-h-[320px]">
               <div>
                 <p className="text-sm uppercase tracking-[0.2em]" style={{ color: 'var(--accent)' }}>Resume File</p>
                 <h3 className="mt-3 text-3xl font-bold" style={{ color: 'var(--text)' }}>Use the original CV from your folder</h3>

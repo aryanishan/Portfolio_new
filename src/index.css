@@ -115,7 +115,7 @@
     position: relative;
     overflow: hidden;
     border: 1px solid var(--border);
-    border-radius: 28px;
+    border-radius: 10px;
     background: linear-gradient(180deg, var(--card-strong), var(--card));
     box-shadow: var(--shadow);
   }
@@ -212,7 +212,7 @@
 .logo-loop-shell {
   position: relative;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   background: linear-gradient(180deg, color-mix(in srgb, var(--card-strong) 88%, transparent), color-mix(in srgb, var(--card) 94%, transparent));
   padding: 1.25rem 0;
@@ -259,7 +259,7 @@
   min-width: 120px;
   margin: 0 1rem;
   padding: 1rem;
-  border-radius: 22px;
+  border-radius: 10px;
   border: 1px solid color-mix(in srgb, var(--accent) 10%, var(--border));
   background: color-mix(in srgb, var(--card-strong) 82%, transparent);
   box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);

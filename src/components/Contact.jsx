@@ -9,7 +9,8 @@ export default function Contact() {
   const [errors, setErrors] = useState({});
   const [submitError, setSubmitError] = useState('');
 
-  const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+  const configuredApiBaseUrl = (import.meta.env.VITE_API_BASE_URL || '').trim();
+  const apiBaseUrl = configuredApiBaseUrl || (import.meta.env.DEV ? 'http://localhost:5000' : '');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -50,7 +51,8 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      const response = await fetch(`${apiBaseUrl}/api/contact`, {
+      const endpoint = `${apiBaseUrl}/api/contact`;
+      const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -58,7 +60,12 @@ export default function Contact() {
         body: JSON.stringify(form),
       });
 
-      const data = await response.json();
+      let data = {};
+      try {
+        data = await response.json();
+      } catch {
+        data = {};
+      }
 
       if (!response.ok) {
         if (data.errors) {
@@ -71,7 +78,12 @@ export default function Contact() {
       setSent(true);
       setForm({ name: '', email: '', message: '' });
     } catch (error) {
-      setSubmitError(error.message || 'Unable to send your message right now.');
+      const isNetworkError = error instanceof TypeError;
+      setSubmitError(
+        isNetworkError
+          ? 'Unable to reach the contact server. Check VITE_API_BASE_URL and backend URL.'
+          : (error.message || 'Unable to send your message right now.')
+      );
     } finally {
       setLoading(false);
     }
@@ -115,9 +127,9 @@ export default function Contact() {
                   value: 'Kanpur, UP',
                 },
               ].map(item => (
-                <div key={item.label} className="glass-card rounded-[22px] p-5 flex items-center gap-4">
+                <div key={item.label} className="glass-card rounded-[10px] p-5 flex items-center gap-4">
                   <div
-                    className="w-12 h-12 rounded-2xl flex items-center justify-center"
+                    className="w-12 h-12 rounded-[10px] flex items-center justify-center"
                     style={{
                       background: 'color-mix(in srgb, var(--accent) 10%, transparent)',
                       border: '1px solid color-mix(in srgb, var(--accent) 25%, transparent)',
@@ -137,7 +149,7 @@ export default function Contact() {
                 </div>
               ))}
 
-              <div className="glass-card rounded-[22px] p-6">
+              <div className="glass-card rounded-[10px] p-6">
                 <p className="text-xs uppercase tracking-[0.18em]" style={{ color: 'var(--accent)' }}>Availability</p>
                 <p className="mt-3 text-xl font-bold" style={{ color: 'var(--text)' }}>Open for freelance and full time work.</p>
                 <p className="mt-2 text-sm leading-7 text-[color:var(--text-muted)]">
@@ -148,7 +160,7 @@ export default function Contact() {
 
             <div
               data-anim
-              className="glass-card rounded-[28px] p-7 opacity-0 translate-y-6 transition-all duration-700"
+              className="glass-card rounded-[10px] p-7 opacity-0 translate-y-6 transition-all duration-700"
             >
               {sent ? (
                 <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
@@ -177,7 +189,7 @@ export default function Contact() {
                       value={form.name}
                       onChange={event => setForm(current => ({ ...current, name: event.target.value }))}
                       placeholder="John Doe"
-                      className="w-full rounded-2xl px-4 py-3 text-sm"
+                      className="w-full rounded-[10px] px-4 py-3 text-sm"
                       style={inputStyle}
                     />
                     {errors.name && <p className="text-xs mt-2 text-red-300">{errors.name}</p>}
@@ -192,7 +204,7 @@ export default function Contact() {
                       value={form.email}
                       onChange={event => setForm(current => ({ ...current, email: event.target.value }))}
                       placeholder="john@example.com"
-                      className="w-full rounded-2xl px-4 py-3 text-sm"
+                      className="w-full rounded-[10px] px-4 py-3 text-sm"
                       style={inputStyle}
                     />
                     {errors.email && <p className="text-xs mt-2 text-red-300">{errors.email}</p>}
@@ -207,7 +219,7 @@ export default function Contact() {
                       value={form.message}
                       onChange={event => setForm(current => ({ ...current, message: event.target.value }))}
                       placeholder="Tell me about your project..."
-                      className="w-full rounded-2xl px-4 py-3 text-sm resize-none"
+                      className="w-full rounded-[10px] px-4 py-3 text-sm resize-none"
                       style={inputStyle}
                     />
                     {errors.message && <p className="text-xs mt-2 text-red-300">{errors.message}</p>}

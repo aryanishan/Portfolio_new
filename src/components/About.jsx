@@ -39,17 +39,17 @@ export default function About() {
           <div className="flex justify-center" data-anim>
             <div className="relative w-full max-w-[410px] opacity-0 translate-y-6 transition-all duration-700" data-anim>
               <div
-                className="absolute -inset-3 rounded-[34px] opacity-70 blur-2xl"
+                className="absolute -inset-3 rounded-[10px] opacity-70 blur-2xl"
                 style={{ background: 'radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 22%, transparent), transparent 65%)' }}
               />
               <div
-                className="relative overflow-hidden rounded-[30px] border p-3 shadow-[0_28px_70px_rgba(0,0,0,0.22)]"
+                className="relative overflow-hidden rounded-[10px] border p-3 shadow-[0_28px_70px_rgba(0,0,0,0.22)]"
                 style={{
                   borderColor: 'color-mix(in srgb, var(--accent) 20%, var(--border))',
                   background: 'linear-gradient(to bottom right, var(--card-strong), var(--card))',
                 }}
               >
-                <div className="overflow-hidden rounded-[24px] h-[420px] md:h-[500px]">
+                <div className="overflow-hidden rounded-[10px] h-[420px] md:h-[500px]">
                   <img
                     src={profileImg}
                     alt="Aryan Gupta"
@@ -100,7 +100,7 @@ export default function About() {
               className="grid sm:grid-cols-2 gap-4 pt-2 opacity-0 translate-y-6 transition-all duration-700"
             >
               {STATS.map(({ icon, value, label }) => (
-                <div key={label} className="glass-card hover-lift rounded-2xl p-5">
+                <div key={label} className="glass-card hover-lift rounded-[10px] p-5">
                   <div className="flex items-center gap-3" style={{ color: 'var(--accent)' }}>
                     {icon}
                     <span className="text-2xl font-extrabold" style={{ color: 'var(--text)' }}>{value}</span>

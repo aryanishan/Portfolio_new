@@ -31,9 +31,9 @@ export default function Training() {
             </h2>
           </div>
 
-          <div data-reveal className="reveal glass-card rounded-[28px] p-7">
+          <div data-reveal className="reveal glass-card rounded-[10px] p-7">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-2xl flex items-center justify-center" style={{ background: 'color-mix(in srgb, var(--accent) 10%, transparent)', color: 'var(--accent)' }}>
+              <div className="w-12 h-12 rounded-[10px] flex items-center justify-center" style={{ background: 'color-mix(in srgb, var(--accent) 10%, transparent)', color: 'var(--accent)' }}>
                 <BriefcaseBusiness size={22} />
               </div>
               <div>
@@ -43,7 +43,7 @@ export default function Training() {
             </div>
 
             {TRAINING.map(training => (
-              <div key={training.title} className="rounded-[24px] border p-5" style={{ borderColor: 'var(--border)', background: 'color-mix(in srgb, var(--card-strong) 72%, transparent)' }}>
+              <div key={training.title} className="rounded-[10px] border p-5" style={{ borderColor: 'var(--border)', background: 'color-mix(in srgb, var(--card-strong) 72%, transparent)' }}>
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
                   <h4 className="text-lg font-bold" style={{ color: 'var(--text)' }}>{training.title}</h4>
                   <span className="text-sm font-semibold" style={{ color: 'var(--accent)' }}>{training.date}</span>
@@ -56,7 +56,7 @@ export default function Training() {
               </div>
             ))}
 
-            <div className="mt-6 rounded-[24px] border p-5" style={{ borderColor: 'var(--border)', background: 'color-mix(in srgb, var(--card-strong) 72%, transparent)' }}>
+            <div className="mt-6 rounded-[10px] border p-5" style={{ borderColor: 'var(--border)', background: 'color-mix(in srgb, var(--card-strong) 72%, transparent)' }}>
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
                 <div>
                   <p className="text-sm uppercase tracking-[0.2em]" style={{ color: 'var(--accent)' }}>Training Certificate</p>
@@ -78,7 +78,7 @@ export default function Training() {
                 href={TRAINING_CERTIFICATE}
                 target="_blank"
                 rel="noreferrer"
-                className="block overflow-hidden rounded-[20px] border transition-transform hover:scale-[1.01]"
+                className="block overflow-hidden rounded-[10px] border transition-transform hover:scale-[1.01]"
                 style={{ borderColor: 'var(--border)' }}
               >
                 <img

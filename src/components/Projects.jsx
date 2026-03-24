@@ -95,7 +95,7 @@ export default function Projects() {
               <article
                 key={project.title}
                 data-anim
-                className="glass-card hover-lift rounded-[24px] p-6 opacity-0 translate-y-6 transition-all duration-700 overflow-hidden relative"
+                className="glass-card hover-lift rounded-[10px] p-6 opacity-0 translate-y-6 transition-all duration-700 overflow-hidden relative"
                 style={{ transitionDelay: `${index * 0.08}s` }}
               >
                 <div className={`absolute inset-x-0 top-0 h-28 bg-gradient-to-b ${project.tone}`} />

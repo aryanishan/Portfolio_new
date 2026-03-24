@@ -49,9 +49,9 @@ export default function Certifications() {
             </h2>
           </div>
 
-          <div data-reveal className="reveal glass-card rounded-[28px] p-7">
+          <div data-reveal className="reveal glass-card rounded-[10px] p-7">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-2xl flex items-center justify-center" style={{ background: 'color-mix(in srgb, var(--accent2) 14%, transparent)', color: 'var(--accent2)' }}>
+              <div className="w-12 h-12 rounded-[10px] flex items-center justify-center" style={{ background: 'color-mix(in srgb, var(--accent2) 14%, transparent)', color: 'var(--accent2)' }}>
                 <Award size={22} />
               </div>
               <div>
@@ -62,7 +62,7 @@ export default function Certifications() {
 
             <div className="space-y-4 mb-8">
               {CERTIFICATIONS.map(cert => (
-                <div key={cert.title} className="rounded-[22px] border p-4 md:p-5" style={{ borderColor: 'var(--border)' }}>
+                <div key={cert.title} className="rounded-[10px] border p-4 md:p-5" style={{ borderColor: 'var(--border)' }}>
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="font-bold leading-6" style={{ color: 'var(--text)' }}>{cert.title}</p>
@@ -79,7 +79,7 @@ export default function Certifications() {
                 Certificate Images
               </p>
               <div
-                className="rounded-[22px] border px-4 py-6 md:px-6"
+                className="rounded-[10px] border px-4 py-6 md:px-6"
                 style={{ borderColor: 'var(--border)', background: 'color-mix(in srgb, var(--card-strong) 76%, transparent)' }}
               >
                 <BounceCards

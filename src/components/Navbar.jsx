@@ -19,7 +19,7 @@ export default function Navbar({ isDark, toggleTheme }) {
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="max-w-6xl mx-auto px-6 pt-6">
         <nav
-          className="rounded-[28px] backdrop-blur-xl px-5 md:px-8 py-4 border"
+          className="rounded-[10px] backdrop-blur-xl px-5 md:px-8 py-4 border"
           style={{
             background: 'var(--nav)',
             borderColor: 'var(--border)',
